@@ -10,6 +10,8 @@
 
 # Scanpy – Single-Cell Analysis in Python
 
+This version adds PaCMAP as an option for dimensionality reduction in tools and plotting.
+
 Scanpy is a scalable toolkit for analyzing single-cell gene expression data
 built jointly with [anndata](https://anndata.readthedocs.io).  It includes
 preprocessing, visualization, clustering, trajectory inference and differential
