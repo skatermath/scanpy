@@ -20,6 +20,7 @@ from ._tools.scatterplots import (
     draw_graph,
     tsne,
     umap,
+    pacmap,
     spatial,
 )
 from ._tools import pca_loadings, pca_scatter, pca_overview, pca_variance_ratio

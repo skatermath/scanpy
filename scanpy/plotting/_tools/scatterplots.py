@@ -680,6 +680,71 @@ def umap(adata, **kwargs) -> Union[Axes, List[Axes], None]:
     scatter_bulk=doc_scatter_embedding,
     show_save_ax=doc_show_save_ax,
 )
+
+def pacmap(adata, **kwargs) -> Union[Axes, List[Axes], None]:
+        
+    """\
+    Scatter plot in PaCMAP basis.
+
+    Parameters
+    ----------
+    {adata_color_etc}
+    {edges_arrows}
+    {scatter_bulk}
+    {show_save_ax}
+
+    Returns
+    -------
+    If `show==False` a :class:`~matplotlib.axes.Axes` or a list of it.
+
+    Examples
+    --------
+
+    .. plot::
+        :context: close-figs
+
+        import scanpy as sc
+        adata = sc.datasets.pbmc68k_reduced()
+        sc.pl.pacmap(adata)
+
+    Colour points by discrete variable (Louvain clusters).
+
+    .. plot::
+        :context: close-figs
+
+        sc.pl.pacmap(adata, color="louvain")
+
+    Colour points by gene expression.
+
+    .. plot::
+        :context: close-figs
+
+        sc.pl.pacmap(adata, color="HES4")
+
+    Plot muliple pacmaps for different gene expressions.
+
+    .. plot::
+        :context: close-figs
+
+        sc.pl.pacmap(adata, color=["HES4", "TNFRSF4"])
+
+    .. currentmodule:: scanpy
+
+    See also
+    --------
+    tl.pacmap
+    """
+    return embedding(adata, 'pacmap', **kwargs)
+
+
+
+@_wraps_plot_scatter
+@_doc_params(
+    adata_color_etc=doc_adata_color_etc,
+    edges_arrows=doc_edges_arrows,
+    scatter_bulk=doc_scatter_embedding,
+    show_save_ax=doc_show_save_ax,
+)
 def tsne(adata, **kwargs) -> Union[Axes, List[Axes], None]:
     """\
     Scatter plot in tSNE basis.
