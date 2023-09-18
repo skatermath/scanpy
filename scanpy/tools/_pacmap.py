@@ -55,7 +55,7 @@ def pacmap(
     - pair_FP: np.ndarray, optional (default: None)
         Further pairs constructed from a previous run.
     - distance: str, optional (default: "euclidean")
-        Distance metric used for high-dimensional space.
+        Distance metric used for high-dimensional space. Allowed metrics include euclidean, manhattan, angular, hamming.
     - lr: float, optional (default: 1.0)
         Learning rate of the optimizer for embedding.
     - num_iters: int, optional (default: 450)
