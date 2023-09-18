@@ -1,7 +1,5 @@
 from typing import Optional, Union
 from anndata import AnnData
-import pacmap as pacmap
-from pacmap import PaCMAP
 from .. import logging as logg
 import numpy as np
 
@@ -91,7 +89,16 @@ def pacmap(
     embedding_data = adata.obsm[init_data]
 
     try:
-        map = PaCMAP(
+        import pacmap as pacmap
+    except ImportError:
+        raise ImportError(
+            'You need to install the package `pacmap`: please run `pip install '
+            'pacmap` in a terminal.'
+    )
+
+
+    try:
+        map = pacmap.PaCMAP(
             n_components=n_components,
             n_neighbors=n_neighbors,
             MN_ratio=MN_ratio,
